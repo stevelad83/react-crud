@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePosts } from '../hooks/usePosts.js';
-import './posts.css';
+import PostCard from './PostCard.js';
 
 export default function Posts() {
   const { loading, error, posts } = usePosts();
@@ -9,9 +9,7 @@ export default function Posts() {
   return (
     <div>
       {posts.map((post) => (
-        <p key={post.id} className="post-it">
-          {(post.title, post.description)}
-        </p>
+        <PostCard key={post.id} {...post} />
       ))}
     </div>
   );
