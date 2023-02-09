@@ -5,3 +5,9 @@ export async function getPosts() {
   //   console.log('hello', response.data);
   return checkError(response);
 }
+
+export async function createPost(title, description) {
+  const response = await client.from('posts').insert({ title: title, description });
+  //check the insert obj
+  return checkError(response);
+}

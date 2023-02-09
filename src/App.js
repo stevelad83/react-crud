@@ -13,8 +13,6 @@ function App() {
         <Route path="/posts/new" component={NewPost} />
         <Route path="/posts" component={Posts} />
       </Switch>
-
-      <Auth />
     </div>
   );
 }
