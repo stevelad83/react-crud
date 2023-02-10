@@ -4,14 +4,14 @@ import { useUser } from '../context/UserContext.js';
 import { authUser } from '../services/auth.js';
 
 export default function Auth() {
-  //   const { type } = useParams();
+  const { type } = useParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const { user, setUser } = useUser();
 
   const clickHandler = async () => {
-    const userResp = await authUser(email, password);
+    const userResp = await authUser(email, password, type);
     setUser(userResp);
     setEmail('');
     setPassword('');
