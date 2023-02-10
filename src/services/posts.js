@@ -15,3 +15,8 @@ export async function updatePost(id, title, description) {
   const response = await client.from('bulletins').update({ title, description }).match({ id });
   return checkError(response);
 }
+
+export async function getPostDetail(id) {
+  const response = await client.from('bulletins').select('*').match({ id }).single();
+  return checkError(response);
+}
