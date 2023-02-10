@@ -7,7 +7,7 @@ export async function getPosts() {
 }
 
 export async function createPost(title, description) {
-  const response = await client.from('posts').insert({ title: title, description });
-  //check the insert obj
+  const response = await client.from('bulletins').insert({ title, description });
+  console.log('response', response);
   return checkError(response);
 }

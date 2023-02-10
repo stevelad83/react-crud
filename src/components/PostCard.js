@@ -6,6 +6,7 @@ import './posts.css';
 export default function PostCard({ title, description, user_id, id }) {
   const { user } = useUser();
   const owner = user.id === user_id;
+
   return (
     <div className="post-card">
       <h3>{title}</h3>

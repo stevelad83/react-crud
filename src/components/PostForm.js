@@ -1,22 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function PostForm({ title = '', description = '' }) {
+export default function PostForm({ title = '', description = '', submitHandler }) {
   const [titleInput, setTitleInput] = useState(title);
   const [descriptionInput, setDescriptionInput] = useState(description);
 
-  console.log('title prop: ', title);
+  useEffect(() => {
+    setTitleInput(title);
+    setDescriptionInput(description);
+  }, [title, description]);
 
-  const myFunction = () => {
-    console.log('running my function');
-  };
-  myFunction();
   return (
     <div>
       <label>Title</label>
-      <input type="text" />
+      <input type="text" value={titleInput} onChange={(e) => setTitleInput(e.target.value)} />
       <label>Description</label>
-      <input type="text" />
-      <button>Submit</button>
+      <input
+        type="text"
+        value={descriptionInput}
+        onChange={(e) => setDescriptionInput(e.target.value)}
+      />
+      <button
+        onClick={() => {
+          submitHandler(titleInput, descriptionInput);
+        }}
+      >
+        Submit
+      </button>
     </div>
   );
 }
