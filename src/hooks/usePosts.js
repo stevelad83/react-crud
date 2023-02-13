@@ -7,11 +7,10 @@ export function usePosts() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPosts();
-      //   console.log('data', data);
       setPosts(data);
     };
     fetchData();
   }, []);
 
-  return { posts };
+  return { posts, setPosts };
 }

@@ -7,7 +7,7 @@ import PostForm from './PostForm.js';
 export default function EditPost() {
   const { id } = useParams();
   const history = useHistory();
-  const { postDetail, setPostDetail, loading, error, setError } = usePost(id);
+  const { postDetail, loading, error, setError } = usePost(id);
 
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error}</h1>;

@@ -19,8 +19,9 @@ export default function Header() {
       {user && (
         <>
           <div>Hello {user.email}</div>
-          <button onClick={handleClick}>Sign Out</button>
+
           <Link to="/posts/new">New Post</Link>
+          <button onClick={handleClick}>Sign Out</button>
         </>
       )}
     </header>
