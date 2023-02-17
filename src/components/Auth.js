@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useUser } from '../context/UserContext.js';
 import { authUser } from '../services/auth.js';
+import './auth.css';
 
 export default function Auth() {
   const { type } = useParams();

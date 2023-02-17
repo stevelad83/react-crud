@@ -19,7 +19,9 @@ export default function Header() {
       {user && (
         <div>
           <div className="greeting">Hello {user.email}</div>
-          <Link to="/posts/new">New Post</Link>
+          <Link className="link" to="/posts/new">
+            New Post
+          </Link>
           <button onClick={handleClick}>Sign Out</button>
         </div>
       )}
