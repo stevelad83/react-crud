@@ -2,7 +2,6 @@ import { checkError, client } from './client.js';
 
 export async function getPosts() {
   const response = await client.from('bulletins').select('*');
-  //   console.log('hello', response.data);
   return checkError(response);
 }
 
@@ -23,6 +22,5 @@ export async function getPostDetail(id) {
 
 export async function deletePost(id) {
   const response = await client.from('bulletins').delete().match({ id }).single();
-  console.log('response', response);
   return checkError(response);
 }

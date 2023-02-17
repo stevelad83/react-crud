@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useUser } from '../context/UserContext.js';
 import { usePost } from '../hooks/usePost.js';
 import { deletePost } from '../services/posts.js';

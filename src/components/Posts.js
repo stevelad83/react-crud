@@ -14,9 +14,15 @@ export default function Posts() {
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error}</h1>;
   return (
-    <div>
+    <div className="posts-container">
       {posts.map((post) => (
-        <PostCard key={post.id} {...post} posts={posts} setPosts={setPosts} />
+        <PostCard
+          className={post.id % 2 ? 'tilt' : ''}
+          key={post.id}
+          {...post}
+          posts={posts}
+          setPosts={setPosts}
+        />
       ))}
     </div>
   );

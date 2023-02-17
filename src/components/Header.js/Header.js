@@ -14,15 +14,14 @@ export default function Header() {
     history.push('./auth');
   };
   return (
-    <header>
+    <header className="header">
       <h2>Bulletin Board</h2>
       {user && (
-        <>
-          <div>Hello {user.email}</div>
-
+        <div>
+          <div className="greeting">Hello {user.email}</div>
           <Link to="/posts/new">New Post</Link>
           <button onClick={handleClick}>Sign Out</button>
-        </>
+        </div>
       )}
     </header>
   );
